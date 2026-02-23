@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programador Backend Java | Desarrollador Spring Boot - Luis Delgado Fernandez</title>
+  <meta name="description" content="Portafolio de Luis Delgado Fernandez, programador y desarrollador backend especializado en Java 21, Spring Boot, APIs REST, microservicios, Docker y Azure DevOps.">
+  <meta name="keywords" content="programador backend,desarrollador backend,programador java,desarrollador java,spring boot,apis rest,microservicios,docker,azure devops,desarrollador software">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Luis Delgado Fernandez">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Programador Backend Java | Desarrollador Spring Boot - Luis Delgado Fernandez">
+  <meta property="og:description" content="Portafolio de Luis Delgado Fernandez, programador y desarrollador backend especializado en Java 21, Spring Boot, APIs REST, microservicios, Docker y Azure DevOps.">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Programador Backend Java | Desarrollador Spring Boot - Luis Delgado Fernandez">
+  <meta name="twitter:description" content="Portafolio de Luis Delgado Fernandez, programador y desarrollador backend especializado en Java 21, Spring Boot, APIs REST, microservicios, Docker y Azure DevOps.">
+  <link rel="canonical" href="https://luisdelgadofernandez.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luis Delgado Fernandez",
+    "jobTitle": "Programador Backend y Desarrollador Java",
+    "description": "Portafolio de Luis Delgado Fernandez, programador y desarrollador backend especializado en Java 21, Spring Boot, APIs REST, microservicios, Docker y Azure DevOps.",
+    "url": "https://luisdelgadofernandez.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/luisdelgadofernandez/"
+    ],
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Backend development",
+      "REST APIs",
+      "Microservices",
+      "Docker",
+      "Azure DevOps"
+    ]
+  }
+  </script>
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b0f1a;
+    }
+
+    body {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    }
+
+    .portfolio {
+      min-height: 100vh;
+      color: #f7f7f7;
+      background:
+        radial-gradient(circle at 0% 10%, #1d3557 0%, transparent 40%),
+        radial-gradient(circle at 90% 20%, #457b9d 0%, transparent 35%),
+        linear-gradient(160deg, #0b0f1a 0%, #111827 45%, #0f172a 100%);
+    }
+
+    .section {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 3.5rem 0;
+      animation: fade-up 0.7s ease both;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid #7fd4ff;
+      border-radius: 999px;
+      color: #7fd4ff;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: #d9e2ec;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .seo-role {
+      margin: 0.8rem 0 0;
+      color: #8ecae6;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.7rem 1.1rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #fca311;
+      color: #111;
+      box-shadow: 0 10px 24px rgba(252, 163, 17, 0.25);
+    }
+
+    .btn-ghost {
+      border: 1px solid #8ecae6;
+      color: #e0fbfc;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
+      font-size: 0.82rem;
+      border: 1px solid #334155;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .specialties {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .projects {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 1rem;
+      padding: 1.15rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(#7fd4ff, rgba(127, 212, 255, 0.2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -0.02rem;
+      top: 1.1rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: #7fd4ff;
+    }
+
+    .period {
+      margin: 0;
+      color: #9fb3c8;
+      font-size: 0.85rem;
+    }
+
+    .company {
+      margin-top: 0;
+      color: #8ecae6;
+      font-weight: 500;
+    }
+
+    ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+      color: #dbe7f3;
+    }
+
+    .project-type {
+      color: #7fd4ff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stack {
+      color: #d0deed;
+      font-size: 0.9rem;
+    }
+
+    .project-link {
+      color: #fca311;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .stack-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .chip {
+      border: 1px solid #365a7a;
+      padding: 0.45rem 0.7rem;
+      border-radius: 0.55rem;
+      background: rgba(16, 34, 56, 0.6);
+      font-size: 0.88rem;
+    }
+
+    .contact {
+      padding-bottom: 5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-links a {
+      color: #8ecae6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 2.6rem 0;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .timeline {
+        padding-left: 0.8rem;
+      }
+
+      .timeline-item {
+        padding-left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio">
+    <header class="hero section">
+      <p class="eyebrow">Backend Developer</p>
+      <h1>Luis Delgado Fernandez</h1>
+      <p class="seo-role">
+        Programador backend Java y desarrollador Spring Boot especializado en APIs REST y microservicios.
+      </p>
+      <p class="lead">
+        Desarrollador Backend especializado en Java 21 y Spring Boot, con experiencia en arquitecturas distribuidas, microservicios y entornos criticos. Experiencia en Kafka, JPA/Hibernate, Docker y Azure DevOps, participando activamente en decisiones tecnicas y mejora de estandares de calidad.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary" data-scroll>Contactar</a>
+        <a href="#proyectos" class="btn btn-ghost" data-scroll>Ver proyectos</a>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Java + Spring Boot</span>
+        <span class="badge">Python</span>
+        <span class="badge">Docker</span>
+        <span class="badge">Vue (base)</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="especialidades">
+        <h2>Especialidades</h2>
+        <div class="grid specialties">
+          <article class="card">
+            <h3>Arquitectura Backend</h3>
+            <p>
+              Diseno de APIs REST escalables, capas limpias y buenas practicas en
+              servicios con Java y Spring Boot.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Soporte Fullstack</h3>
+            <p>
+              Colaboracion con frontend en interfaces con Vue y consumo eficiente
+              de APIs para entregar producto completo.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Vision de Producto y Negocio</h3>
+            <p>
+              Capacidad para identificar oportunidades de mejora, potenciar el alcance
+              de un proyecto y alinear decisiones tecnicas con objetivos de negocio.
+              Interlocucion directa con clientes para definir soluciones de valor.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="experiencia">
+        <h2>Experiencia Laboral</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <p class="period">19/08/2025 - Actualidad</p>
+              <h3>Desarrollador Backend</h3>
+              <p class="company">Amaris Espana Estrategia e Innovacion Tecnologica SL (Remoto - Madrid)</p>
+              <p>Desarrollo de microservicios en arquitectura distribuida utilizando Java 21 y Spring Boot en entorno regulado de alta exigencia tecnica.</p>
+              <ul>
+                <li>Implementacion de soluciones seguras con Spring Security y control de acceso.</li>
+                <li>Diseno de flujos asincronos mediante Kafka.</li>
+                <li>Optimizacion de acceso a datos con JPA/Hibernate y SQL.</li>
+                <li>Pruebas unitarias y de integracion asegurando cobertura en produccion.</li>
+                <li>CI/CD con Docker y Azure DevOps.</li>
+                <li>Participacion activa en decisiones tecnicas y revision de codigo.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <p class="period">01/07/2024 - Actualidad</p>
+              <h3>Creador y Responsable de Desarrollo</h3>
+              <p class="company">MisBarrancos</p>
+              <p>Liderazgo completo del desarrollo de aplicacion movil y ecosistema web, desde conceptualizacion hasta produccion.</p>
+              <ul>
+                <li>Desarrollo movil nativo con Jetpack Compose.</li>
+                <li>Frontend web en Vue 3.</li>
+                <li>Backend en Java con Spring Boot.</li>
+                <li>Sistema de web scraping en Python.</li>
+                <li>Persistencia con MariaDB.</li>
+                <li>Despliegue en servidor Linux autogestionado con Docker Compose.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <p class="period">15/01/2024 - 18/08/2025</p>
+              <h3>Desarrollador Backend</h3>
+              <p class="company">KIO Networks (Murcia)</p>
+              <p>Desarrollo de portal para administracion y adquisicion de recursos en centro de datos.</p>
+              <ul>
+                <li>Implementacion con arquitectura hexagonal.</li>
+                <li>Desarrollo con Java y Spring Boot.</li>
+                <li>Estructura modular y flexible para gestion eficiente de recursos.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <p class="period">21/11/2022 - 15/01/2024</p>
+              <h3>Programador Back</h3>
+              <p class="company">Minsait (Zaragoza)</p>
+              <p>Desarrollo de portal para administracion y adquisicion de recursos en centro de datos.</p>
+              <ul>
+                <li>Arquitectura hexagonal.</li>
+                <li>Java con Spring Boot.</li>
+                <li>Estructura modular orientada a escalabilidad.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <p class="period">05/07/2021 - 20/11/2022</p>
+              <h3>Programador Web</h3>
+              <p class="company">Izquierdo Informatica S.L (Calatayud)</p>
+              <p>Desarrollo de solucion interna para aseguradora enfocada en optimizacion operativa.</p>
+              <ul>
+                <li>Aplicaciones web con Java, JavaScript y SQL.</li>
+                <li>Optimizacion de procesos administrativos.</li>
+                <li>Mejora de eficiencia en gestion de datos y servicios.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="proyectos">
+        <h2>Proyectos Personales</h2>
+        <div class="grid projects">
+          <article class="card project-card">
+            <p class="project-type">Proyecto Personal</p>
+            <h3>MisBarrancos</h3>
+            <p>Aplicacion movil y plataforma web orientada a exploracion y gestion de barrancos, desarrollada de forma integral.</p>
+            <p class="stack">Stack: Java, Spring Boot, Vue 3, Jetpack Compose, Python, MariaDB, Docker</p>
+            <a href="https://misbarrancos.com" target="_blank" rel="noopener noreferrer" class="project-link">
+              Ver proyecto
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <p class="project-type">Proyecto Personal</p>
+            <h3>Proyecto base para monitores y clubs de montana</h3>
+            <p>Plataforma web modelo base para clubes y monitores de montana, actualmente en proceso de desarrollo. Disenada como nucleo reutilizable y escalable para gestionar actividades, blog, normativa y estructura multi-club.</p>
+            <p class="stack">Stack: Java, Spring Boot, Vue 3, Mariadb, Docker</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="stack">
+        <h2>Stack Tecnico</h2>
+        <div class="stack-wrap">
+          <span class="chip">Java 21</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Spring Security</span>
+          <span class="chip">Kafka</span>
+          <span class="chip">JPA / Hibernate</span>
+          <span class="chip">Microservicios</span>
+          <span class="chip">Arquitectura Hexagonal</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Docker Compose</span>
+          <span class="chip">Azure DevOps</span>
+          <span class="chip">Python</span>
+          <span class="chip">Vue 3</span>
+          <span class="chip">MariaDB</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Scrum</span>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto">
+        <h2>Contacto</h2>
+        <p>Si buscas un perfil backend orientado a resultados, podemos hablar.</p>
+        <div class="contact-links">
+          <a href="mailto:delgadofernandez.luisdesarrollo.com">delgadofernandez.luisdesarrollo.com</a>
+          <a href="https://www.linkedin.com/in/luisdelgadofernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-scroll]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var href = link.getAttribute("href");
+        if (!href || !href.startsWith("#")) return;
+        var section = document.getElementById(href.slice(1));
+        if (!section) return;
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
+</body>
+</html>
