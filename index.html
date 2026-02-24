@@ -125,6 +125,10 @@
       padding: 0.7rem 1.1rem;
       border-radius: 0.6rem;
       font-weight: 600;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.95rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -342,12 +346,19 @@
           summary: "Desarrollador Backend especializado en Java 21 y Spring Boot, con experiencia en arquitecturas distribuidas, microservicios y entornos criticos. Experiencia en Kafka, JPA/Hibernate, Docker y Azure DevOps, participando activamente en decisiones tecnicas y mejora de estandares de calidad.",
           contactBtn: "Contactar",
           projectsBtn: "Ver proyectos",
+          downloadCvBtn: "Descargar CV",
           specialtiesTitle: "Especialidades",
           experienceTitle: "Experiencia Laboral",
           projectsTitle: "Proyectos Personales",
           stackTitle: "Stack Tecnico",
           contactTitle: "Contacto",
           contactText: "Si buscas un perfil backend orientado a resultados, podemos hablar.",
+          cvHeadline: "Curriculum Vitae",
+          cvSummaryTitle: "Perfil Profesional",
+          cvExperienceTitle: "Experiencia",
+          cvProjectsTitle: "Proyectos",
+          cvSkillsTitle: "Competencias Tecnicas",
+          cvContactTitle: "Contacto",
           projectType: "Proyecto Personal",
           seeProject: "Ver proyecto",
           languageLabel: "Idioma",
@@ -461,12 +472,19 @@
           summary: "Backend developer specialized in Java 21 and Spring Boot, with experience in distributed architectures, microservices, and critical environments. Hands-on experience with Kafka, JPA/Hibernate, Docker, and Azure DevOps, actively contributing to technical decisions and quality standards.",
           contactBtn: "Contact",
           projectsBtn: "View projects",
+          downloadCvBtn: "Download CV",
           specialtiesTitle: "Specialties",
           experienceTitle: "Work Experience",
           projectsTitle: "Personal Projects",
           stackTitle: "Technical Stack",
           contactTitle: "Contact",
           contactText: "If you are looking for a results-driven backend profile, let us talk.",
+          cvHeadline: "Curriculum Vitae",
+          cvSummaryTitle: "Professional Summary",
+          cvExperienceTitle: "Experience",
+          cvProjectsTitle: "Projects",
+          cvSkillsTitle: "Technical Skills",
+          cvContactTitle: "Contact",
           projectType: "Personal Project",
           seeProject: "View project",
           languageLabel: "Language",
@@ -607,6 +625,7 @@
             '<div class="hero-actions">' +
               '<a href="#' + sectionIds.contact + '" class="btn btn-primary" data-scroll>' + escapeHtml(t.contactBtn) + '</a>' +
               '<a href="#' + sectionIds.projects + '" class="btn btn-ghost" data-scroll>' + escapeHtml(t.projectsBtn) + '</a>' +
+              '<button type="button" class="btn btn-ghost" data-download-cv>' + escapeHtml(t.downloadCvBtn) + '</button>' +
             '</div>' +
             '<div class="badge-row">' +
               '<span class="badge">Java + Spring Boot</span>' +
@@ -670,11 +689,97 @@
               '<h2>' + escapeHtml(t.contactTitle) + '</h2>' +
               '<p>' + escapeHtml(t.contactText) + '</p>' +
               '<div class="contact-links">' +
-                '<a href="mailto:delgadofernandez.luisdesarrollo.com">delgadofernandez.luisdesarrollo.com</a>' +
+                '<a href="mailto:delgadofernandez.luis.com">delgadofernandez.luis.com</a>' +
                 '<a href="https://www.linkedin.com/in/luisdelgadofernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
               '</div>' +
             '</section>' +
           '</main>';
+      }
+
+      function buildCvHtml(t, lang) {
+        var experience = t.jobs.map(function (job) {
+          return '' +
+            '<article class="cv-item">' +
+              '<h3>' + escapeHtml(job.role) + '</h3>' +
+              '<p class="muted"><strong>' + escapeHtml(job.company) + '</strong> | ' + escapeHtml(job.period) + '</p>' +
+              '<p>' + escapeHtml(job.description) + '</p>' +
+              '<ul>' + job.achievements.map(function (a) { return '<li>' + escapeHtml(a) + '</li>'; }).join("") + '</ul>' +
+            '</article>';
+        }).join("");
+
+        var projects = t.projects.map(function (project) {
+          var link = project.link ? '<p><strong>URL:</strong> ' + escapeHtml(project.link) + '</p>' : "";
+          return '' +
+            '<article class="cv-item">' +
+              '<h3>' + escapeHtml(project.name) + '</h3>' +
+              '<p>' + escapeHtml(project.description) + '</p>' +
+              '<p><strong>Stack:</strong> ' + escapeHtml(project.stack) + '</p>' +
+              link +
+            '</article>';
+        }).join("");
+
+        return '<!DOCTYPE html>' +
+          '<html lang="' + escapeHtml(t.lang) + '">' +
+          '<head>' +
+            '<meta charset="UTF-8">' +
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+            '<title>' + escapeHtml(t.cvHeadline + " - " + t.siteName) + '</title>' +
+            '<style>' +
+              'body{margin:0;background:#f4f6f8;color:#1a1a1a;font-family:"Segoe UI",Arial,sans-serif;line-height:1.5;}' +
+              '.cv{max-width:900px;margin:32px auto;background:#fff;border:1px solid #d6dce3;padding:34px 38px;box-shadow:0 8px 20px rgba(10,20,30,.06);}' +
+              '.header{border-bottom:2px solid #e4e9ef;padding-bottom:14px;margin-bottom:20px;}' +
+              'h1{margin:0;font-size:30px;letter-spacing:.3px;}h2{font-size:17px;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid #e6ebf1;}' +
+              'h3{font-size:16px;margin:0 0 4px;}p{margin:6px 0;}ul{margin:8px 0 0;padding-left:20px;}' +
+              'li{margin-bottom:4px;}.muted{color:#4f5f73;}.chips{display:flex;flex-wrap:wrap;gap:7px;}' +
+              '.chip{border:1px solid #c9d3dd;border-radius:4px;padding:4px 8px;font-size:13px;background:#f7f9fb;}' +
+              '.cv-item{margin-bottom:14px;}@media print{body{background:#fff;}.cv{margin:0;box-shadow:none;border:0;padding:0;}}' +
+            '</style>' +
+          '</head>' +
+          '<body>' +
+            '<main class="cv">' +
+              '<header class="header">' +
+                '<h1>' + escapeHtml(t.siteName) + '</h1>' +
+                '<p class="muted">' + escapeHtml(t.roleLine) + '</p>' +
+              '</header>' +
+              '<section>' +
+                '<h2>' + escapeHtml(t.cvSummaryTitle) + '</h2>' +
+                '<p>' + escapeHtml(t.summary) + '</p>' +
+              '</section>' +
+              '<section>' +
+                '<h2>' + escapeHtml(t.cvExperienceTitle) + '</h2>' +
+                experience +
+              '</section>' +
+              '<section>' +
+                '<h2>' + escapeHtml(t.cvProjectsTitle) + '</h2>' +
+                projects +
+              '</section>' +
+              '<section>' +
+                '<h2>' + escapeHtml(t.cvSkillsTitle) + '</h2>' +
+                '<div class="chips">' + t.stack.map(function (skill) { return '<span class="chip">' + escapeHtml(skill) + '</span>'; }).join("") + '</div>' +
+              '</section>' +
+              '<section>' +
+                '<h2>' + escapeHtml(t.cvContactTitle) + '</h2>' +
+                '<p>Email: delgadofernandez.luisdesarrollo.com</p>' +
+                '<p>LinkedIn: https://www.linkedin.com/in/luisdelgadofernandez/</p>' +
+              '</section>' +
+            '</main>' +
+          '</body>' +
+          '</html>';
+      }
+
+      function downloadCv(lang) {
+        var t = translations[lang] || translations.es;
+        var cvHtml = buildCvHtml(t, lang);
+        var fileName = lang === "en" ? "CV_Luis_Delgado_Fernandez_EN.html" : "CV_Luis_Delgado_Fernandez_ES.html";
+        var blob = new Blob([cvHtml], { type: "text/html;charset=utf-8" });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
       }
 
       function updateSeo(t, lang) {
@@ -739,6 +844,14 @@
               window.history.pushState({}, "", nextPath);
             }
             render(selected);
+          });
+        }
+
+        var downloadButton = document.querySelector("[data-download-cv]");
+        if (downloadButton) {
+          downloadButton.addEventListener("click", function () {
+            var lang = detectLang(window.location.pathname);
+            downloadCv(lang);
           });
         }
       }
