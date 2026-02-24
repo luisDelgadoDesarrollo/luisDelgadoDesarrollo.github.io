@@ -58,8 +58,23 @@
 
     .top-controls {
       display: flex;
+      align-items: center;
+      gap: 0.6rem;
       justify-content: flex-end;
       margin-bottom: 1rem;
+    }
+
+    .btn-top {
+      padding: 0.45rem 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    .name-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
     }
 
     .lang-select {
@@ -328,12 +343,17 @@
       .top-controls {
         justify-content: flex-start;
       }
+
+      .name-row {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
   <div id="app" class="portfolio"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     (function () {
       var sectionIds = {
@@ -631,13 +651,15 @@
               '</select>' +
             '</div>' +
             '<p class="eyebrow">' + escapeHtml(t.eyebrow) + '</p>' +
-            '<h1>' + escapeHtml(t.siteName) + '</h1>' +
+            '<div class="name-row">' +
+              '<h1>' + escapeHtml(t.siteName) + '</h1>' +
+              '<button type="button" class="btn btn-cv btn-top" data-download-cv>' + escapeHtml(t.downloadCvBtn) + '</button>' +
+            '</div>' +
             '<p class="seo-role">' + escapeHtml(t.roleLine) + '</p>' +
             '<p class="lead">' + escapeHtml(t.summary) + '</p>' +
             '<div class="hero-actions">' +
               '<a href="#' + sectionIds.contact + '" class="btn btn-primary" data-scroll>' + escapeHtml(t.contactBtn) + '</a>' +
               '<a href="#' + sectionIds.projects + '" class="btn btn-ghost" data-scroll>' + escapeHtml(t.projectsBtn) + '</a>' +
-              '<button type="button" class="btn btn-cv" data-download-cv>' + escapeHtml(t.downloadCvBtn) + '</button>' +
             '</div>' +
             '<div class="badge-row">' +
               '<span class="badge">Java + Spring Boot</span>' +
@@ -772,7 +794,7 @@
               '</section>' +
               '<section>' +
                 '<h2>' + escapeHtml(t.cvContactTitle) + '</h2>' +
-                '<p>Email: delgadofernandez.luisdesarrollo.com</p>' +
+                '<p>Email: delgadofernandez.luis@gmail.com</p>' +
                 '<p>LinkedIn: https://www.linkedin.com/in/luisdelgadofernandez/</p>' +
               '</section>' +
             '</main>' +
@@ -782,16 +804,111 @@
 
       function downloadCvPdf(lang) {
         var t = translations[lang] || translations.es;
-        var cvHtml = buildCvHtml(t, lang);
-        var printWindow = window.open("", "_blank", "noopener,noreferrer,width=1024,height=768");
-        if (!printWindow) return;
-        printWindow.document.open();
-        printWindow.document.write(cvHtml);
-        printWindow.document.close();
-        printWindow.focus();
-        setTimeout(function () {
-          printWindow.print();
-        }, 250);
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+          window.alert(lang === "en"
+            ? "PDF library not available. Check your internet connection."
+            : "La libreria PDF no esta disponible. Revisa tu conexion a internet.");
+          return;
+        }
+        var jsPDF = window.jspdf.jsPDF;
+        var doc = new jsPDF({ unit: "mm", format: "a4" });
+        var pageHeight = doc.internal.pageSize.getHeight();
+        var pageWidth = doc.internal.pageSize.getWidth();
+        var margin = 16;
+        var y = 20;
+
+        function ensureSpace(needed) {
+          if (y + needed > pageHeight - margin) {
+            doc.addPage();
+            y = 20;
+          }
+        }
+
+        function addSectionTitle(text) {
+          ensureSpace(10);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(13);
+          doc.text(text, margin, y);
+          y += 6;
+          doc.setDrawColor(200, 210, 220);
+          doc.line(margin, y - 2, pageWidth - margin, y - 2);
+          y += 2;
+        }
+
+        function addParagraph(text, fontSize) {
+          var size = fontSize || 10;
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(size);
+          var lines = doc.splitTextToSize(String(text), pageWidth - margin * 2);
+          ensureSpace(lines.length * 4.4 + 2);
+          doc.text(lines, margin, y);
+          y += lines.length * 4.4 + 2;
+        }
+
+        function addBullet(text) {
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+          var lines = doc.splitTextToSize(String(text), pageWidth - margin * 2 - 5);
+          ensureSpace(lines.length * 4.4 + 1);
+          doc.text("•", margin, y);
+          doc.text(lines, margin + 4, y);
+          y += lines.length * 4.4 + 1;
+        }
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(19);
+        doc.text(t.siteName, margin, y);
+        y += 7;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        doc.text(t.roleLine, margin, y);
+        y += 8;
+        doc.setDrawColor(120, 130, 145);
+        doc.line(margin, y, pageWidth - margin, y);
+        y += 6;
+
+        addSectionTitle(t.cvSummaryTitle);
+        addParagraph(t.summary, 10);
+
+        addSectionTitle(t.cvExperienceTitle);
+        t.jobs.forEach(function (job) {
+          ensureSpace(18);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(11);
+          doc.text(job.role, margin, y);
+          y += 4.8;
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+          addParagraph(job.company + " | " + job.period, 10);
+          addParagraph(job.description, 10);
+          job.achievements.forEach(function (achievement) {
+            addBullet(achievement);
+          });
+          y += 2;
+        });
+
+        addSectionTitle(t.cvProjectsTitle);
+        t.projects.forEach(function (project) {
+          ensureSpace(14);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(11);
+          doc.text(project.name, margin, y);
+          y += 5;
+          addParagraph(project.description, 10);
+          addParagraph("Stack: " + project.stack, 10);
+          if (project.link) addParagraph("URL: " + project.link, 10);
+          y += 1;
+        });
+
+        addSectionTitle(t.cvSkillsTitle);
+        addParagraph(t.stack.join(" | "), 10);
+
+        addSectionTitle(t.cvContactTitle);
+        addParagraph("Email: delgadofernandez.luis@gmail.com", 10);
+        addParagraph("LinkedIn: https://www.linkedin.com/in/luisdelgadofernandez/", 10);
+
+        var fileName = lang === "en" ? "Luis-Delgado-Fernandez-CV-EN.pdf" : "Luis-Delgado-Fernandez-CV-ES.pdf";
+        doc.save(fileName);
       }
 
       function updateSeo(t, lang) {
