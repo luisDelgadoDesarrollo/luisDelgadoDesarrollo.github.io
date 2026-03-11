@@ -70,8 +70,8 @@
   <div class="portfolio">
     <header class="hero section">
       <div class="top-controls">
-        <a class="lang-select" href="/spanish">Español</a>
-        <a class="lang-select" href="/english">English</a>
+        <a class="lang-select" href="./index.html">Español</a>
+        <a class="lang-select" href="./en.html">English</a>
       </div>
       <p class="eyebrow">Backend Developer</p>
       <div class="name-row">
@@ -96,6 +96,7 @@
         <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">05/07/2021 - 20/11/2022</p><h3>Programador Web</h3><p class="company">Izquierdo Informática S.L (Calatayud)</p><p>Desarrollo de solución interna para aseguradora enfocada en optimización operativa.</p><ul><li>Desarrollo de aplicaciones web con Java, JavaScript y SQL para centralizar operaciones clave.</li><li>Automatización de procesos administrativos reduciendo tareas manuales repetitivas y tiempos de gestión.</li><li>Mejora del acceso a datos y servicios internos, aumentando eficiencia operativa del equipo.</li></ul></div></article>
       </div></section>
       <section class="section" id="proyectos"><h2>Proyectos Personales</h2><div class="grid projects"><article class="card project-card"><p class="project-type">Proyecto Personal</p><h3>MisBarrancos</h3><p>Aplicación móvil y plataforma web orientada a exploración y gestión de barrancos, desplegada con Docker Compose, con más de 1000 usuarios y tracción comercial inicial.</p><p class="stack">Stack: Java, Spring Boot, Vue 3, Jetpack Compose, Python, MariaDB, Docker</p><a href="https://misbarrancos.com" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto</a></article><article class="card project-card"><p class="project-type">Proyecto Personal</p><h3>Proyecto base para monitores y clubs de montaña</h3><p>Plataforma web modelo base para clubes y monitores de montaña, actualmente en proceso de desarrollo. Diseñada como núcleo reutilizable y escalable para gestionar actividades, blog, normativa y estructura multi-club.</p><p class="stack">Stack: Java, Spring Boot, Vue 3, Mariadb, Docker</p></article></div></section>
+      <section class="section" id="estudios"><h2>Estudios</h2><div class="grid specialties"><article class="card"><h3>Ingeniería Informática</h3><p>Universitat Oberta de Catalunya (UOC)</p><p class="company">Remoto, España | 2025 - Actualidad</p></article><article class="card"><h3>Curso de especialización en Inteligencia Artificial y Big Data</h3><p>IES Pablo Serrano</p><p class="company">Zaragoza, España | 2022 - 2023</p></article><article class="card"><h3>Desarrollo de Aplicaciones Multiplataforma (DAM)</h3><p>IES Emilio Jimeno</p><p class="company">Calatayud, España | 2019 - 2021</p><p>Nota final: 7.67 / 10</p></article></div></section>
       <section class="section" id="stack"><h2>Stack Técnico</h2><div class="stack-groups"><article class="card"><h3>Backend</h3><div class="stack-wrap"><span class="chip">Java 21</span><span class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">Kafka</span></div></article><article class="card"><h3>Arquitectura</h3><div class="stack-wrap"><span class="chip">Microservicios</span><span class="chip">Arquitectura Hexagonal</span></div></article><article class="card"><h3>DevOps</h3><div class="stack-wrap"><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Azure DevOps</span></div></article><article class="card"><h3>Base de datos</h3><div class="stack-wrap"><span class="chip">MariaDB</span><span class="chip">SQL</span></div></article><article class="card"><h3>Complementario</h3><div class="stack-wrap"><span class="chip">Python</span><span class="chip">Vue 3</span><span class="chip">Linux</span><span class="chip">Scrum</span></div></article></div></section>
       <section class="section contact" id="contacto"><h2>Contacto</h2><p>Si buscas un perfil backend orientado a resultados, podemos hablar.</p><div class="contact-links"><a href="mailto:delgadofernandez.luis@gmail.com">delgadofernandez.luis@gmail.com</a><a href="https://www.linkedin.com/in/luisdelgadofernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></section>
     </main>
@@ -164,6 +165,7 @@
         var sections = [
           { id: document.documentElement.lang === 'en' ? 'experience' : 'experiencia', cards: '.timeline-content' },
           { id: document.documentElement.lang === 'en' ? 'projects' : 'proyectos', cards: '.project-card' },
+          { id: document.documentElement.lang === 'en' ? 'education' : 'estudios', cards: '.card' },
           { id: 'stack', cards: '.card' },
           { id: document.documentElement.lang === 'en' ? 'contact' : 'contacto', cards: null }
         ];
@@ -174,14 +176,16 @@
           var h2 = root.querySelector('h2');
           section(h2 ? h2.textContent : '');
 
-          if (s.id === 'stack') {
+          if (s.id === 'stack' || s.id === 'education' || s.id === 'estudios') {
             root.querySelectorAll('.card').forEach(function (card) {
               ensure(8);
               var title = (card.querySelector('h3') || {}).textContent || '';
-              var chips = Array.from(card.querySelectorAll('.chip')).map(function (c) { return c.textContent; }).join(', ');
+              var content = s.id === 'stack'
+                ? Array.from(card.querySelectorAll('.chip')).map(function (c) { return c.textContent; }).join(', ')
+                : Array.from(card.querySelectorAll('p')).map(function (p) { return p.textContent; }).join(' | ');
               doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.text(title + ':', m, y); y += 4.5;
               doc.setFont('helvetica','normal'); doc.setFontSize(10);
-              y = addParagraph(doc, chips, m, y, pageW - m * 2, 4.4) + 1;
+              y = addParagraph(doc, content, m, y, pageW - m * 2, 4.4) + 1;
             });
             return;
           }
