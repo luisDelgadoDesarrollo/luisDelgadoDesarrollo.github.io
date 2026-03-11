@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Backend Developer | Spring Boot Developer - Luis Delgado Fernández</title>
+  <meta name="description" content="Portfolio of Luis Delgado Fernández, backend developer specialized in Java 21, Spring Boot, REST APIs, microservices, Docker, and Azure DevOps.">
+  <meta name="keywords" content="backend developer,java developer,spring boot,rest apis,microservices,docker,azure devops,software developer">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Luis Delgado Fernández">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Java Backend Developer | Spring Boot Developer - Luis Delgado Fernández">
+  <meta property="og:description" content="Portfolio of Luis Delgado Fernández, backend developer specialized in Java 21, Spring Boot, REST APIs, microservices, Docker, and Azure DevOps.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://luisdelgadofernandez.com/english">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Java Backend Developer | Spring Boot Developer - Luis Delgado Fernández">
+  <meta name="twitter:description" content="Portfolio of Luis Delgado Fernández, backend developer specialized in Java 21, Spring Boot, REST APIs, microservices, Docker, and Azure DevOps.">
+  <link rel="canonical" href="https://luisdelgadofernandez.com/english">
+  <script id="ld-json" type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Luis Delgado Fernández","jobTitle":"Backend Developer and Java Developer","description":"Portfolio of Luis Delgado Fernández, backend developer specialized in Java 21, Spring Boot, REST APIs, microservices, Docker, and Azure DevOps.","url":"https://luisdelgadofernandez.com/english","sameAs":["https://www.linkedin.com/in/luisdelgadofernandez/"],"knowsAbout":["Java","Spring Boot","Backend development","REST APIs","Microservices","Docker","Azure DevOps"]}</script>
+  <style>
+    html, body { width: 100%; min-height: 100%; margin: 0; padding: 0; background: #0b0f1a; }
+    body { font-family: "Space Grotesk", "Segoe UI", sans-serif; }
+    .portfolio { min-height: 100vh; color: #f7f7f7; background: radial-gradient(circle at 0% 10%, #1d3557 0%, transparent 40%), radial-gradient(circle at 90% 20%, #457b9d 0%, transparent 35%), linear-gradient(160deg, #0b0f1a 0%, #111827 45%, #0f172a 100%); }
+    .section { width: min(1100px, 92%); margin: 0 auto; padding: 3.5rem 0; animation: fade-up 0.7s ease both; }
+    .hero { padding-top: 5rem; }
+    .top-controls { display: flex; align-items: center; gap: 0.6rem; justify-content: flex-end; margin-bottom: 1rem; }
+    .btn-top { padding: 0.45rem 0.8rem; font-size: 0.88rem; }
+    .name-row { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; }
+    .lang-select { background: rgba(15, 23, 42, 0.72); color: #f7f7f7; border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 0.5rem; padding: 0.45rem 0.6rem; font-size: 0.9rem; text-decoration:none; }
+    .eyebrow { display: inline-block; margin-bottom: 0.8rem; padding: 0.25rem 0.75rem; border: 1px solid #7fd4ff; border-radius: 999px; color: #7fd4ff; letter-spacing: 0.07em; text-transform: uppercase; font-size: 0.75rem; }
+    h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: 1.05; }
+    h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); margin-bottom: 1.5rem; }
+    h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+    .lead { max-width: 720px; color: #d9e2ec; font-size: 1.05rem; line-height: 1.7; }
+    .seo-role { margin: 0.8rem 0 0; color: #8ecae6; font-size: 1rem; font-weight: 600; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+    .btn { text-decoration: none; padding: 0.7rem 1.1rem; border-radius: 0.6rem; font-weight: 600; border: 0; cursor: pointer; font-family: inherit; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease; display:inline-block; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: #fca311; color: #111; box-shadow: 0 10px 24px rgba(252, 163, 17, 0.25); }
+    .btn-ghost { border: 1px solid #8ecae6; color: #e0fbfc; background: transparent; }
+    .btn-cv { border: 1px solid #fca311; color: #0b1220; background: linear-gradient(135deg, #ffd089 0%, #fca311 100%); box-shadow: 0 10px 24px rgba(252, 163, 17, 0.28); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .badge { font-size: 0.82rem; border: 1px solid #334155; background: rgba(15, 23, 42, 0.7); padding: 0.4rem 0.7rem; border-radius: 999px; }
+    .grid { display: grid; gap: 1rem; }
+    .specialties { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .projects { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .stack-groups { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card { background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 1rem; padding: 1.15rem; backdrop-filter: blur(4px); }
+    .timeline { position: relative; padding-left: 1rem; }
+    .timeline::before { content: ""; position: absolute; left: 0.35rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(#7fd4ff, rgba(127, 212, 255, 0.2)); }
+    .timeline-item { position: relative; padding-left: 1.3rem; margin-bottom: 1rem; }
+    .timeline-dot { position: absolute; left: -0.02rem; top: 1.1rem; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: #7fd4ff; }
+    .period { margin: 0; color: #9fb3c8; font-size: 0.85rem; }
+    .company { margin-top: 0; color: #8ecae6; font-weight: 500; }
+    ul { margin: 0.8rem 0 0; padding-left: 1.1rem; }
+    li { margin-bottom: 0.35rem; color: #dbe7f3; }
+    .project-type { color: #7fd4ff; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; margin-bottom: 0.3rem; }
+    .stack { color: #d0deed; font-size: 0.9rem; }
+    .project-link { color: #fca311; text-decoration: none; font-weight: 600; }
+    .stack-wrap { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .chip { border: 1px solid #365a7a; padding: 0.45rem 0.7rem; border-radius: 0.55rem; background: rgba(16, 34, 56, 0.6); font-size: 0.88rem; }
+    .contact { padding-bottom: 5rem; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .contact-links a { color: #8ecae6; text-decoration: none; font-weight: 600; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(16px);} to { opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body>
+  <div class="portfolio">
+    <header class="hero section">
+      <div class="top-controls">
+        <a class="lang-select" href="/spanish">Español</a>
+        <a class="lang-select" href="/english">English</a>
+      </div>
+      <p class="eyebrow">Backend Developer</p>
+      <div class="name-row">
+        <h1>Luis Delgado Fernández</h1>
+        <button type="button" class="btn btn-cv btn-top" data-download-cv>Download PDF</button>
+      </div>
+      <p class="seo-role">Java backend programmer and Spring Boot developer specialized in REST APIs and microservices.</p>
+      <p class="lead">Backend engineer specialized in system design with Java 21 and Spring Boot. I design scalable microservice architectures, lead technical decisions, and enforce code quality, testing, and delivery practices in regulated environments.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Contact</a>
+        <a href="#projects" class="btn btn-ghost">View projects</a>
+      </div>
+      <div class="badge-row"><span class="badge">Java + Spring Boot</span><span class="badge">Python</span><span class="badge">Docker</span><span class="badge">Vue (base)</span></div>
+    </header>
+    <main>
+      <section class="section" id="specialties"><h2>Specialties</h2><div class="grid specialties"><article class="card"><h3>Backend Architecture</h3><p>Design of scalable REST APIs, clean layering, and best practices in Java and Spring Boot services.</p></article><article class="card"><h3>Fullstack Support</h3><p>Collaboration with frontend teams on Vue interfaces and efficient API consumption to deliver complete products.</p></article><article class="card"><h3>Product and Business Vision</h3><p>Ability to identify improvement opportunities, increase project impact, and align technical decisions with business goals. Direct communication with clients to define valuable solutions.</p></article></div></section>
+      <section class="section" id="experience"><h2>Work Experience</h2><div class="timeline">
+        <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">08/19/2025 - Present</p><h3>Backend Developer</h3><p class="company">Amaris España Estrategia e Innovación Tecnológica SL (Remote - Madrid)</p><p>Development of Java 21 and Spring Boot microservices in a regulated environment, contributing to technical design and evolution of critical services.</p><ul><li>Designed and implemented Spring Security access-control policies, improving traceability for technical audits.</li><li>Designed Kafka asynchronous flows to decouple critical services and improve end-to-end processing stability.</li><li>Optimized SQL queries and JPA/Hibernate mappings to improve response times and data-access efficiency.</li><li>Strengthened unit and integration testing in critical modules, reducing release regressions.</li><li>Automated CI/CD pipelines with Docker and Azure DevOps to speed up and standardize deployments.</li><li>Contributed to architecture decisions and code reviews, improving technical consistency and onboarding speed.</li></ul></div></article>
+        <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">07/01/2024 - Present</p><h3>Creator and Development Lead</h3><p class="company">MisBarrancos</p><p>End-to-end product leadership (mobile app + web platform), deployed with Docker Compose, now with 1000+ users and brand interest for advertising.</p><ul><li>Defined product and technical direction from zero, turning an initial concept into an operational and monetizable platform.</li><li>Built native mobile app with Jetpack Compose and web frontend with Vue 3 to deliver a consistent cross-channel experience.</li><li>Implemented Java Spring Boot backend with MariaDB persistence, focused on performance and maintainable APIs.</li><li>Automated data ingestion with Python scraping to enrich content and support organic growth.</li><li>Managed deployment and operations on self-hosted Linux infrastructure using Docker Compose and continuous delivery cycles.</li><li>Achieved market traction with 1000+ users and early commercial validation from multiple interested brands.</li></ul></div></article>
+        <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">01/15/2024 - 08/18/2025</p><h3>Backend Developer</h3><p class="company">KIO Networks (Murcia)</p><p>Development of a portal for management and acquisition of data center resources.</p><ul><li>Designed and implemented hexagonal architecture, reducing coupling between domain and infrastructure layers.</li><li>Developed Java and Spring Boot modules with clear contracts, improving maintainability and testability.</li><li>Built reusable modular structure for resource management, accelerating delivery of new features.</li></ul></div></article>
+        <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">11/21/2022 - 01/15/2024</p><h3>Backend Programmer</h3><p class="company">Minsait (Zaragoza)</p><p>Development of a portal for management and acquisition of data center resources.</p><ul><li>Applied hexagonal architecture to separate business rules from external integration points.</li><li>Implemented Java Spring Boot services with strong domain clarity and long-term evolvability.</li><li>Modularized the solution for scalability, reducing change impact across components.</li></ul></div></article>
+        <article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content card"><p class="period">07/05/2021 - 11/20/2022</p><h3>Web Programmer</h3><p class="company">Izquierdo Informática S.L (Calatayud)</p><p>Development of an internal solution for an insurance company focused on operational optimization.</p><ul><li>Built web applications with Java, JavaScript, and SQL to centralize key operations.</li><li>Automated administrative processes, reducing repetitive manual work and management time.</li><li>Improved access to internal data and services, increasing team operational efficiency.</li></ul></div></article>
+      </div></section>
+      <section class="section" id="projects"><h2>Personal Projects</h2><div class="grid projects"><article class="card project-card"><p class="project-type">Personal Project</p><h3>MisBarrancos</h3><p>Mobile application and web platform for canyoning exploration and management, deployed with Docker Compose, with 1000+ users and early commercial traction.</p><p class="stack">Stack: Java, Spring Boot, Vue 3, Jetpack Compose, Python, MariaDB, Docker</p><a href="https://misbarrancos.com" target="_blank" rel="noopener noreferrer" class="project-link">View project</a></article><article class="card project-card"><p class="project-type">Personal Project</p><h3>Base project for mountain instructors and clubs</h3><p>Base web platform for mountain clubs and instructors, currently in development. Designed as a reusable and scalable core to manage activities, blog, regulations, and multi-club structure.</p><p class="stack">Stack: Java, Spring Boot, Vue 3, Mariadb, Docker</p></article></div></section>
+      <section class="section" id="stack"><h2>Technical Stack</h2><div class="stack-groups"><article class="card"><h3>Backend</h3><div class="stack-wrap"><span class="chip">Java 21</span><span class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">Kafka</span></div></article><article class="card"><h3>Architecture</h3><div class="stack-wrap"><span class="chip">Microservices</span><span class="chip">Hexagonal Architecture</span></div></article><article class="card"><h3>DevOps</h3><div class="stack-wrap"><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Azure DevOps</span></div></article><article class="card"><h3>Databases</h3><div class="stack-wrap"><span class="chip">MariaDB</span><span class="chip">SQL</span></div></article><article class="card"><h3>Additional</h3><div class="stack-wrap"><span class="chip">Python</span><span class="chip">Vue 3</span><span class="chip">Linux</span><span class="chip">Scrum</span></div></article></div></section>
+      <section class="section contact" id="contact"><h2>Contact</h2><p>If you are looking for a results-driven backend profile, let us talk.</p><div class="contact-links"><a href="mailto:delgadofernandez.luis@gmail.com">delgadofernandez.luis@gmail.com</a><a href="https://www.linkedin.com/in/luisdelgadofernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></section>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('[data-download-cv]');
+      if (!btn) return;
+
+      function addParagraph(doc, text, x, y, width, lineHeight) {
+        var lines = doc.splitTextToSize(String(text || ''), width);
+        doc.text(lines, x, y);
+        return y + lines.length * lineHeight;
+      }
+
+      btn.addEventListener('click', function () {
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+          window.alert(document.documentElement.lang === 'en' ? 'PDF library not available. Check your internet connection.' : 'La librería PDF no está disponible. Revisa tu conexión a internet.');
+          return;
+        }
+
+        var jsPDF = window.jspdf.jsPDF;
+        var doc = new jsPDF({ unit: 'mm', format: 'a4' });
+        var pageW = doc.internal.pageSize.getWidth();
+        var pageH = doc.internal.pageSize.getHeight();
+        var m = 16;
+        var y = 20;
+
+        function ensure(h) {
+          if (y + h > pageH - m) { doc.addPage(); y = 20; }
+        }
+
+        function section(title) {
+          ensure(10);
+          doc.setFont('helvetica','bold');
+          doc.setFontSize(13);
+          doc.text(title, m, y);
+          y += 6;
+          doc.setDrawColor(200,210,220);
+          doc.line(m, y - 2, pageW - m, y - 2);
+          y += 2;
+        }
+
+        var name = (document.querySelector('h1') || {}).textContent || 'CV';
+        var role = (document.querySelector('.seo-role') || {}).textContent || '';
+        var summary = (document.querySelector('.lead') || {}).textContent || '';
+
+        doc.setFont('helvetica','bold');
+        doc.setFontSize(19);
+        doc.text(name, m, y);
+        y += 7;
+        doc.setFont('helvetica','normal');
+        doc.setFontSize(11);
+        y = addParagraph(doc, role, m, y, pageW - m * 2, 4.4) + 1;
+        doc.setDrawColor(120,130,145);
+        doc.line(m, y, pageW - m, y);
+        y += 6;
+
+        var summaryTitle = document.documentElement.lang === 'en' ? 'Professional Summary' : 'Perfil Profesional';
+        section(summaryTitle);
+        doc.setFont('helvetica','normal');
+        doc.setFontSize(10);
+        y = addParagraph(doc, summary, m, y, pageW - m * 2, 4.4) + 2;
+
+        var sections = [
+          { id: document.documentElement.lang === 'en' ? 'experience' : 'experiencia', cards: '.timeline-content' },
+          { id: document.documentElement.lang === 'en' ? 'projects' : 'proyectos', cards: '.project-card' },
+          { id: 'stack', cards: '.card' },
+          { id: document.documentElement.lang === 'en' ? 'contact' : 'contacto', cards: null }
+        ];
+
+        sections.forEach(function (s) {
+          var root = document.getElementById(s.id);
+          if (!root) return;
+          var h2 = root.querySelector('h2');
+          section(h2 ? h2.textContent : '');
+
+          if (s.id === 'stack') {
+            root.querySelectorAll('.card').forEach(function (card) {
+              ensure(8);
+              var title = (card.querySelector('h3') || {}).textContent || '';
+              var chips = Array.from(card.querySelectorAll('.chip')).map(function (c) { return c.textContent; }).join(', ');
+              doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.text(title + ':', m, y); y += 4.5;
+              doc.setFont('helvetica','normal'); doc.setFontSize(10);
+              y = addParagraph(doc, chips, m, y, pageW - m * 2, 4.4) + 1;
+            });
+            return;
+          }
+
+          if (s.id === 'contact' || s.id === 'contacto') {
+            Array.from(root.querySelectorAll('p, a')).forEach(function (el) {
+              var t = (el.textContent || '').trim();
+              if (!t) return;
+              doc.setFont('helvetica','normal'); doc.setFontSize(10);
+              y = addParagraph(doc, t, m, y, pageW - m * 2, 4.4);
+            });
+            y += 1;
+            return;
+          }
+
+          root.querySelectorAll(s.cards).forEach(function (card) {
+            ensure(12);
+            var title = (card.querySelector('h3') || {}).textContent || '';
+            doc.setFont('helvetica','bold');
+            doc.setFontSize(11);
+            doc.text(title, m, y);
+            y += 5;
+
+            var paras = Array.from(card.querySelectorAll('p')).map(function (p) { return (p.textContent || '').trim(); }).filter(Boolean);
+            doc.setFont('helvetica','normal');
+            doc.setFontSize(10);
+            paras.forEach(function (p) { y = addParagraph(doc, p, m, y, pageW - m * 2, 4.4); });
+
+            var lis = card.querySelectorAll('li');
+            lis.forEach(function (li) {
+              var text = (li.textContent || '').trim();
+              if (!text) return;
+              var lines = doc.splitTextToSize(text, pageW - m * 2 - 5);
+              ensure(lines.length * 4.4 + 1);
+              doc.text('•', m, y);
+              doc.text(lines, m + 4, y);
+              y += lines.length * 4.4 + 1;
+            });
+            y += 2;
+          });
+        });
+
+        var fileName = document.documentElement.lang === 'en' ? 'Luis-Delgado-Fernandez-CV-EN.pdf' : 'Luis-Delgado-Fernandez-CV-ES.pdf';
+        doc.save(fileName);
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
